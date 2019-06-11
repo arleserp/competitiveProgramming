@@ -57,7 +57,6 @@ public class uva11362 {
     }
 
     static class Node {
-
         int id;
         boolean end;
         Node[] links;

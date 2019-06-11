@@ -3,11 +3,12 @@ package strings;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
 
 /**
  *
  * @author arlese.rodriguezp
+ * Trie Data Structure implemented in Java
+ * 
  */
 public class Trie {
 
@@ -25,25 +26,27 @@ public class Trie {
         int i = 0;
         Node currentTrie = trie;
         while (i < s.length()) {
-            if (currentTrie.links[s.charAt(i) - 'A'] == null) {
-                Node n = new Node(s.charAt(0) - 'A');
-                currentTrie = currentTrie.links[s.charAt(i) - 'A'] = n;
+            if (currentTrie.links[s.charAt(i) - 'A'] == null) { //if letter is empty stores this letter in current trie
+                Node n = new Node(s.charAt(0) - 'A'); 
+                currentTrie = currentTrie.links[s.charAt(i) - 'A'] = n; //update current to last letter.
             } else {
-                currentTrie = currentTrie.links[s.charAt(i) - 'A'];
+                currentTrie = currentTrie.links[s.charAt(i) - 'A']; //use current letter.
             }
             i++;
         }
         currentTrie.end = true;
     }
 
+    //Base Node of a Trie 
     static class Node {
-        int id;
-        boolean end;
+        int id; //indicates symbol in this case letter
+        boolean end; //indicates end of a String given
         Node[] links;
+        
         public Node(int id) {
             this.id = id;
             end = false;
-            this.links = new Node[27];
+            this.links = new Node[27]; //27 in this case because is implemented for letters
         }
 
     }
