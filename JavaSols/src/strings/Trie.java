@@ -26,7 +26,7 @@ public class Trie {
         int i = 0;
         Node currentTrie = trie;
         while (i < s.length()) {
-            if (currentTrie.links[s.charAt(i) - 'A'] == null) { //if letter is empty stores this letter in current trie
+            if (currentTrie.links[s.charAt(i) - 'A'] == null) { //if letter is empty stores this letter in current trie.
                 Node n = new Node(s.charAt(0) - 'A'); 
                 currentTrie = currentTrie.links[s.charAt(i) - 'A'] = n; //update current to last letter.
             } else {
