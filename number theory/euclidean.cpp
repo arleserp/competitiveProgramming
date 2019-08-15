@@ -1,17 +1,14 @@
 #include<iostream>
 
 using namespace std;
+// https://www.youtube.com/watch?v=Z8m0vfnkYQw
 
 int t;
 int x, y, d;
 typedef unsigned long long ll;
 
 int extendedEuclid(int a, int b){
-  if(b==0){
-	  x=1;
-	  y=0;
-	  return a;
-  }
+  if(b==0){ x=1;  y=0; return a;}
   d = extendedEuclid(b, a%b);
   int _x = x;
   x = y;
@@ -20,24 +17,12 @@ int extendedEuclid(int a, int b){
 }
 
 int main(){
-	int T;
-    cin >> T;
-
-		while (T-- > 0) {			
-			ll ca, cn, ca1, cn1;      
-      cin >> ca;
-      cin >> cn;          
-
-      cin >> ca1;
-      cin >> cn1;
-			extendedEuclid(cn, cn1);
-
-			if ((ca - ca1) % d != 0) {
-				cout << "no solution" << endl;
-			} else {				
-        ca = ca + x * (ca1 - ca) / d * cn;
-				cn = cn * cn1 / d;
-				cout << ca << " " << cn << endl;
-			}
-		}
+		int T;
+    ll a, b;
+    cin >> a;          //3 
+    cin >> b;          //5
+    extendedEuclid(a, b);
+    cout << x << "\n"; // x0 = -1
+    cout << y << "\n"; // y0 = 2
 }
+
