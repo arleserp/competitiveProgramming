@@ -18,13 +18,13 @@ import java.util.Scanner;
 public class Subsetgen2 {
 
     public static void main(String[] args) throws IOException {
-        int p; // size of collection
+        long p; // size of collection
         ArrayList<Integer> collection = new ArrayList<>();
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        p = Integer.parseInt(br.readLine());
+        p = Long.parseLong(br.readLine());
 
         for (int i = 0; i < p; i++) {
-            collection.add(Integer.parseInt(br.readLine()));
+            //collection.add(Integer.parseInt(br.readLine()));
         }
 
         int j = Integer.parseInt(br.readLine());

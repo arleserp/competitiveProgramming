@@ -16,7 +16,7 @@ public class SubsetBasic {
 
     
     static ArrayList<Integer> subset = new ArrayList<>();
-    static int n = 3;
+    static int n = 5;
 
     private static void search(int k) {
         if (k == n + 1) {

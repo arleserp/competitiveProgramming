@@ -13,33 +13,34 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class Subsetgen {
 
-	public static void main(String[] args) throws IOException {
-		int p; // size of collection
-		ArrayList<Integer> collection = new ArrayList<>();
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		p = Integer.parseInt(br.readLine());
-		
-		for (int i = 0; i < p; i++) {
-			collection.add(Integer.parseInt(br.readLine()));
-		}
+    public static void main(String[] args) throws IOException {
+        Long p; // size of collection
+        ArrayList<Integer> collection = new ArrayList<>();
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        p = Long.parseLong(br.readLine());
 
-		// there are 2^n possible subsets iterate over it
-		for (int k = 0; k < (1 << p); k++) {			
-			//try for each bit of each subset
-			for (int index = 0; index < p; index++) {
-				if (((k >> index) & 1) == 1) {
-					// System.out.print(bars.get(index)+"+");
-					System.out.print(collection.get(index)  + ",");					
-					//do things...
-				}
-			}
-			System.out.println();
-		}
-	}
+        for (int i = 0; i < p; i++) {
+            //collection.add(Integer.parseInt(br.readLine()));
+            collection.add(i);
+        }
+
+        // there are 2^n possible subsets iterate over it
+        for (long k = 0; k < (1L << p); k++) {
+            //try for each bit of each subset+
+            //System.out.println("k" + k);
+            for (int i = 0; i < p; i++) {
+                if (((k >> i) & 1) == 1) {
+                    // System.out.print(bars.get(index)+"+");
+                    System.out.print(collection.get(i) + ",");
+                    //do things...
+                }
+            }
+            System.out.println();
+        }
+    }
 }
 
 /*

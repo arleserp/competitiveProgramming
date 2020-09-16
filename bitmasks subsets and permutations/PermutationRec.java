@@ -35,7 +35,7 @@ public class PermutationRec {
     }
     
     public static void main(String[] args) {
-        n = 10;
+        n = 40;
         chosen = new boolean[n+1];
         search();
         

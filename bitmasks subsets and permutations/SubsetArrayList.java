@@ -18,7 +18,7 @@ public class SubsetArrayList {
 
     static ArrayList<String> subset = new ArrayList<>();
     static ArrayList<String> collection = new ArrayList<>();
-    static int n = 3;
+    static int n;
 
     private static void search(int k) {
         if (k == n + 1) {
