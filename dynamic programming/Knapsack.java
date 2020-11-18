@@ -19,15 +19,12 @@ public class Knapsack {
 
     static int knapsack(int id, int w) {
         if (id == N || w == 0) {
-            return 0;
-    
+            return 0;    
         }
         if (weights[id] > w) {
             return knapsack(id + 1, w);
-    
         } else {
             return  Math.max(knapsack(id + 1, w), prices[id] + knapsack(id + 1, w - weights[id]));
-
         }
     }
     

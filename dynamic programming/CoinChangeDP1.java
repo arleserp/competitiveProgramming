@@ -13,7 +13,7 @@ import java.util.Arrays;
  */
 public class CoinChangeDP1 {
  
-    static int oo = 1<<20;
+    static int oo = 1<<9;
     static int[] coins =  {1, 3, 4, 7};
     static int[][] memo = new int[4001][2002]; //X va hasta 4000 i va hasta 2000
     
@@ -37,6 +37,21 @@ public class CoinChangeDP1 {
         for (int i = 0; i < memo.length; i++) {
             Arrays.fill(memo[i], -1);
         }
-        System.out.println(coinCh(125, coins.length-1));
+        
+        
+        int X = 4000;
+        int n = coins.length;
+        
+        for (X = 1; X <= 4000; X++) {
+            System.out.println(coinCh(X, n-1));    
+        }
+        
+        
+        /*for (int x = 0; x <= X ; x++) {
+            for (int i = 0; i < n; i++) {
+                System.out.print(memo[x][i] + " ");
+            }
+            System.out.println("");
+        }*/
     }
 }

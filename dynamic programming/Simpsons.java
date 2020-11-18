@@ -39,6 +39,7 @@ public class Simpsons {
         
         System.out.println(C(4,2));
         System.out.println(C(49,2));
+        System.out.println(C(50,50));
         
     }
     
